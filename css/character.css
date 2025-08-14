@@ -1,0 +1,25 @@
+.character-container {
+  padding: 20px;
+}
+
+.character-wrapper {
+  display: flex;
+  column-gap: 25px;
+}
+
+.character-img-wrapper {
+}
+.character-img {
+}
+.character-stat-wrapper {
+}
+.character-name {
+}
+.character-hp {
+}
+.character-dmg {
+}
+.character-wl-wrapper {
+}
+.wins {
+}

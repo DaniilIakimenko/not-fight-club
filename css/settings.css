@@ -1,0 +1,18 @@
+.settings-container {
+  padding: 20px;
+}
+
+.change-name-wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+}
+
+.change-name-text {
+}
+
+.character-name-input-set {
+}
+
+.change-name-btn {
+}
