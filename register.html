@@ -17,16 +17,19 @@
         <h1 class="title register-title">Введите имя персонажа</h1>
         <input 
           type="text" 
-          class="character-name-input-reg" 
+          class="character-name-input-reg"
+          id="characterName"
           minlength="1" 
           maxlength="16" 
           required 
           placeholder="имя персонажа"
         >
-        <button class="btn btn-register">Создать</button>
+        <button class="btn btn-register" onclick="saveCharName()">Создать</button>
       </div>
     </div>
   </main>
+
+  <script src="/js/register.js"></script>
 </body>
 
 </html>

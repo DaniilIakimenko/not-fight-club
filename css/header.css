@@ -21,13 +21,13 @@
 }
 
 .nav-link-home {
-  background-image: url("/assets/svg/home.svg");
+  background-image: url("../assets/svg/home.svg");
 }
 
 .nav-link-char {
-  background-image: url("/assets/svg/character.svg");
+  background-image: url("../assets/svg/character.svg");
 }
 
 .nav-link-set {
-  background-image: url("/assets/svg/settings.svg");
+  background-image: url("../assets/svg/settings.svg");
 }
