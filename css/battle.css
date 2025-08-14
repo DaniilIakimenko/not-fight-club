@@ -1,0 +1,96 @@
+.battle-container {
+  padding: 20px;
+}
+
+.battle-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70%;
+}
+
+.battle-character-wrapper {
+}
+.battle-character-name {
+}
+.character-img-wrapper {
+}
+.character-img {
+}
+.battle-character-hp-wrapper {
+}
+.character-hp-bar {
+}
+.character-hp {
+}
+.character-current-hp {
+}
+.character-max-hp {
+}
+
+.battle-actions-wrapper {
+  text-align: center;
+}
+
+.battle-actions-title {
+  margin-bottom: 15px;
+}
+
+.battle-actions-zones {
+  display: flex;
+  justify-content: center;
+  column-gap: 25px;
+  margin-bottom: 15px;
+}
+
+.zone {
+}
+
+.zone-title {
+  margin-bottom: 5px;
+}
+
+.zone-picker-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.zone-picker-label {
+}
+.zone-picker-checkbox {
+}
+
+.btn-attack {
+  margin: 0 auto;
+}
+
+.battle-enemy-wrapper {
+}
+.battle-enemy-name {
+}
+.enemy-img-wrapper {
+}
+.enemy-img {
+}
+.battle-enemy-hp-wrapper {
+}
+.enemy-hp-bar {
+}
+.enemy-hp {
+}
+.enemy-current-hp {
+}
+.enemy-max-hp {
+}
+
+.battle-log {
+  position: absolute;
+  left: 50%;
+  bottom: -250px;
+  width: 50%;
+  height: 50%;
+  border: 1px solid #282828;
+  transform: translate(-50%, 0);
+}
