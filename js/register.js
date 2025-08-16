@@ -1,9 +1,8 @@
-const saveCharName = () => {
-  const name = document.getElementById('characterName').value;
+import { saveCharName } from "./storage.js";
 
-  if (name.trim() === '') return alert ('Введите имя персонажа!');
+const btnRegister = document.querySelector('#btnRegister');
 
-  localStorage.setItem('characterName', name);
-  
+btnRegister.addEventListener('click', () => {
+  saveCharName();
   window.location.href = 'index.html';
-}
+});

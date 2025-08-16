@@ -27,8 +27,12 @@
   <main class="main">
     <div class="container character-container">
       <div class="character-wrapper">
-        <div class="character-img-wrapper">
-          <img src="https://placeholder.pics/svg/300x350" alt="" class="character-img">
+        <div class="character-slider-wrapper">
+          <div class="character-slider" id="characterSlider">
+          </div>
+          <button class="prev-btn" id="prevBtn">❮</button>
+          <button class="next-btn" id="nextBtn">❯</button>
+          <button class="btn btn-avatar" id="btnAvatar">Сохранить</button>
         </div>
         
         <div class="character-stat-wrapper">
@@ -44,6 +48,7 @@
     </div>
   </main>
 
+  <script type="module" src="/js/config.js"></script>
   <script type="module" src="/js/storage.js"></script>
   <script type="module" src="/js/character.js"></script>
 </body>

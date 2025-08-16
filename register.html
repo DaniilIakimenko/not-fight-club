@@ -24,12 +24,22 @@
           required 
           placeholder="имя персонажа"
         >
-        <button class="btn btn-register" onclick="saveCharName()">Создать</button>
+        <div class="character-type-wrapper">
+          <!-- <div class="character-type-avatar">
+            <img src="https://placeholder.pics/svg/300x350" alt="" class="character-img">
+          </div>
+          <div class="character-type-stats-wrapper">
+            <p class="character-type">Раса: <span></span></p>
+            <p class="character-type-hp">Количество жизней: </p>
+            <p class="character-type-dmg">Урон: <span></span></p>
+          </div> -->
+        </div>
+        <button class="btn btn-register" id="btnRegister">Создать</button>
       </div>
     </div>
   </main>
 
-  <script src="/js/register.js"></script>
+  <script type="module" src="js/register.js"></script>
 </body>
 
 </html>

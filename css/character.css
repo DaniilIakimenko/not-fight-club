@@ -7,10 +7,44 @@
   column-gap: 25px;
 }
 
-.character-img-wrapper {
+.character-slider-wrapper {
+  position: relative;
+  width: 300px;
+  text-align: center;
+  overflow: hidden;
 }
-.character-img {
+
+.character-slider {
+  display: flex;
+  margin-bottom: 15px;
 }
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 5px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.btn-avatar {
+  
+}
+
 .character-stat-wrapper {
 }
 .character-name {

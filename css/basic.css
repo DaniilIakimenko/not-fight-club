@@ -41,3 +41,9 @@ body {
 .btn {
   width: 100px;
 }
+
+.character-img {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}

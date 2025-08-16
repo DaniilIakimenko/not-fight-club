@@ -16,7 +16,10 @@
 .battle-character-name {
 }
 .character-img-wrapper {
+  width: 300px;
+  height: 350px;
 }
+
 .character-img {
 }
 .battle-character-hp-wrapper {
