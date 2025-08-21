@@ -1,4 +1,4 @@
-import { avatars, enemies } from "./config.js";
+import { avatars, enemies, heroes } from "./config.js";
 
 // Сохраняем имя персонажа
 export const saveCharName = () => {
@@ -23,6 +23,16 @@ export const getAvatarUrl = (index) => {
   return avatars[index];
 }
 
+// Работа с персонажем
+export const saveHero = (hero) => {
+  localStorage.setItem('hero', JSON.stringify(hero));
+}
+
+export const getHero = () => {
+  const heroData = localStorage.getItem('hero');
+
+  return heroData;
+}
 
 // Проверка наличия имени персонажа в ls
 export const checkRegister = () => {

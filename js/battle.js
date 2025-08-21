@@ -1,5 +1,5 @@
-import { avatars, heroes } from './config.js';
-import { checkRegister, getAvatar, getCurrentEnemy, getRandomEnemy, saveCurrentEnemy, saveDefeatedEnemies, getDefeatedEnemies } from './storage.js'
+import { avatars, heroes, BATTLE_CONFIG } from './config.js';
+import { checkRegister, getAvatar, saveHero, getHero, getCurrentEnemy, getRandomEnemy, saveCurrentEnemy, saveDefeatedEnemies, getDefeatedEnemies } from './storage.js'
 
 checkRegister();
 
@@ -21,15 +21,23 @@ const renderHero = (hero) => {
   document.querySelector('#characterHp').textContent = `${hero.currentHp}/${hero.maxHp}`;
 }
 
-renderHero(heroes[0]);
-
 let currentEnemy = null;
 
 // Инициализируем бой
 const initBattle = () => {
+  renderHero(heroes[0]);
+  saveHero(heroes[0]);
+
+  setupCheckboxLimits('.attack-checkbox', BATTLE_CONFIG.maxAttackZones, true);
+  setupCheckboxLimits('.defense-checkbox', BATTLE_CONFIG.maxDefenseZones, true);
+
+  updateAttackButtonState();
+
+  const isBattleStarted = localStorage.getItem('battleStarted') === 'true';
+
   currentEnemy = getCurrentEnemy();
 
-  if (!currentEnemy) {
+  if (!currentEnemy || !isBattleStarted) {
     currentEnemy = getRandomEnemy();
 
     if (currentEnemy) {
@@ -65,6 +73,37 @@ const renderEnemy = (enemy) => {
   document.querySelector('#enemyImg').src = enemy.avatar;
 
   updateHealthBar('enemy', enemy.currentHp, enemy.maxHp);
+}
+
+// Устанавливаем максимум для выбора зон атаки и защиты
+const setupCheckboxLimits = (checkboxSelector, maxCount, updateAttackButton) => {
+  const checkboxes = document.querySelectorAll(checkboxSelector);
+
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+      const checkedCount = document.querySelectorAll(`${checkboxSelector}:checked`).length;
+
+      checkboxes.forEach(cb => {
+        cb.disabled = checkedCount >= maxCount && !cb.checked;
+      })
+
+      if (updateAttackButton) {
+        updateAttackButtonState();
+      }
+    })
+  })
+}
+
+// Проверяем кнопку атаки
+const updateAttackButtonState = () => {
+  const attackChecked = document.querySelectorAll('.attack-checkbox:checked').length;
+  const defenseChecked = document.querySelectorAll('.defense-checkbox:checked').length;
+  const attackButton = document.querySelector('.attack-btn');
+
+  const canAttack = attackChecked === BATTLE_CONFIG.maxAttackZones && defenseChecked === BATTLE_CONFIG.maxDefenseZones;
+
+  attackButton.disabled = !canAttack;
+  attackButton.classList.toggle('.disabled-btn', !canAttack);
 }
 
 initBattle();

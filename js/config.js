@@ -46,3 +46,8 @@ export const heroes = [
     damage: 20
   }
 ]
+
+export const BATTLE_CONFIG = {
+  maxAttackZones: 1,
+  maxDefenseZones: 2
+}
