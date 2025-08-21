@@ -1,8 +1,10 @@
-import { saveCharName } from "./storage.js";
+import { checkRegister, saveCharName } from "./storage.js";
 
-const btnRegister = document.querySelector('#btnRegister');
+checkRegister();
 
-btnRegister.addEventListener('click', () => {
+const registerBtn = document.getElementById('registerBtn');
+
+registerBtn.addEventListener('click', () => {
   saveCharName();
   window.location.href = 'index.html';
 });

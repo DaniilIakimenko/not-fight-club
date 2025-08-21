@@ -1,4 +1,4 @@
-import { checkRegister } from "./storage.js";
+import { checkRegister, saveCharName } from "./storage.js";
 
 checkRegister();
 
@@ -9,3 +9,10 @@ const setPlaceholder = () => {
 }
 
 setPlaceholder();
+
+const changeNameBtn = document.getElementById('changeNameBtn');
+
+changeNameBtn.addEventListener('click', () => {
+  saveCharName();
+  setPlaceholder();
+});

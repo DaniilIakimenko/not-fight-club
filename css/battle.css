@@ -15,7 +15,9 @@
 }
 .battle-character-name {
 }
-.character-img-wrapper {
+
+.character-img-wrapper,
+.enemy-img-wrapper {
   width: 300px;
   height: 350px;
 }
