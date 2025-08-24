@@ -37,12 +37,19 @@ export const getHero = () => {
 // Проверка наличия имени персонажа в ls
 export const checkRegister = () => {
   const localName = localStorage.getItem('characterName');
+  const currentPage = window.location.pathname;
 
-  if (!localName) {
-    window.location.href = '/register.html';
-  } else if (localName && window.location.href.includes('/register.html')) {
-    window.location.href = '/index.html';
+  if (localName && currentPage.includes('register.html')) {
+    window.location.href = 'index.html';
+    return true;
   }
+  
+  if (!localName && !currentPage.includes('register.html')) {
+    window.location.href = 'register.html';
+    return false;
+  }
+  
+  return !!localName;
 }
 
 // Работа с врагами
