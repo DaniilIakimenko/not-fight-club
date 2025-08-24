@@ -12,7 +12,7 @@ export const enemies = [
     currentHp: 90,
     damage: 15,
     attackZones: 2,
-    defendZones: 2,
+    defenseZones: 2,
     avatar: '../assets/img/lich-king.jpg'
   },
   {
@@ -22,7 +22,7 @@ export const enemies = [
     currentHp: 100,
     damage: 20,
     attackZones: 1,
-    defendZones: 3,
+    defenseZones: 3,
     avatar: '../assets/img/ragnaros.webp'
   },
   {
@@ -32,7 +32,7 @@ export const enemies = [
     currentHp: 80,
     damage: 10,
     attackZones: 3,
-    defendZones: 1,
+    defenseZones: 1,
     avatar: '../assets/img/illidan.jpg'
   }
 ]
@@ -51,3 +51,11 @@ export const BATTLE_CONFIG = {
   maxAttackZones: 1,
   maxDefenseZones: 2
 }
+
+export const ZONES = [
+  'head',
+  'neck',
+  'body',
+  'hands',
+  'legs'
+]

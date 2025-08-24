@@ -31,7 +31,7 @@ export const saveHero = (hero) => {
 export const getHero = () => {
   const heroData = localStorage.getItem('hero');
 
-  return heroData;
+  return heroData ? JSON.parse(heroData) : null;
 }
 
 // Проверка наличия имени персонажа в ls
