@@ -1,3 +1,8 @@
+html,
+body {
+  scrollbar-gutter: auto;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -35,4 +40,11 @@ body {
 
 .btn {
   width: 100px;
+}
+
+.character-img,
+.enemy-img {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

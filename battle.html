@@ -13,12 +13,13 @@
   <header class="header">
     <div class="container">
       <div class="header-wrapper">
-        <h1 class="title header-title">Персонаж</h1>
+        <h1 class="title header-title">Битва</h1>
         <nav class="nav">
           <ul class="nav-list">
             <li class="nav-item"><a href="/index.html" class="nav-link nav-link-home"></a></li>
             <li class="nav-item"><a href="/character.html" class="nav-link nav-link-char"></a></li>
             <li class="nav-item"><a href="/settings.html" class="nav-link nav-link-set"></a></li>
+            <li class="nav-item"><a href="/roadmap.html" class="nav-link nav-link-road"></a></li>
           </ul>
         </nav>
       </div>
@@ -29,12 +30,11 @@
       <div class="battle-wrapper">
         <div class="battle-character-wrapper">
           <p class="battle-character-name"></p>
-          <div class="character-img-wrapper">
-            <img src="https://placeholder.pics/svg/300x350" alt="" class="character-img">
+          <div class="character-img-wrapper" id="characterImgWrapper">
           </div>
           <div class="battle-character-hp-wrapper">
             <progress class="character-hp-bar" value="100" max="100"></progress>
-            <p class="character-hp"><span class="character-current-hp">100</span>/<span class="character-max-hp">100</span></p>
+            <p class="character-hp" id="characterHp"></p>
           </div>
         </div>
 
@@ -42,26 +42,26 @@
           <p class="battle-actions-title">Выберите 1 область атаки и 2 области защиты</p>
           <div class="battle-actions-zones">
             <div class="zone">
-              <p class="zone-title ">Атака</p>
+              <p class="zone-title">Атака</p>
               <div class="zone-picker-wrapper">
                 <label for="" class="zone-picker-label">Голова</label>
-                <input type="checkbox" class="zone-picker-checkbox" name="" id="">
+                <input type="checkbox" class="zone-picker-checkbox attack-checkbox" name="" id="" data-zone="head">
               </div>
               <div class="zone-picker-wrapper">
                 <label for="" class="zone-picker-label">Шея</label>
-                <input type="checkbox" class="zone-picker-checkbox" name="" id="">
+                <input type="checkbox" class="zone-picker-checkbox attack-checkbox" name="" id="" data-zone="neck">
               </div>
               <div class="zone-picker-wrapper">
                 <label for="" class="zone-picker-label">Тело</label>
-                <input type="checkbox" class="zone-picker-checkbox" name="" id="">
+                <input type="checkbox" class="zone-picker-checkbox attack-checkbox" name="" id="" data-zone="body">
               </div>
               <div class="zone-picker-wrapper">
                 <label for="" class="zone-picker-label">Руки</label>
-                <input type="checkbox" class="zone-picker-checkbox" name="" id="">
+                <input type="checkbox" class="zone-picker-checkbox attack-checkbox" name="" id="" data-zone="hands">
               </div>
               <div class="zone-picker-wrapper">
                 <label for="" class="zone-picker-label">Ноги</label>
-                <input type="checkbox" class="zone-picker-checkbox" name="" id="">
+                <input type="checkbox" class="zone-picker-checkbox attack-checkbox" name="" id="" data-zone="legs">
               </div>
             </div>
 
@@ -69,44 +69,48 @@
               <p class="zone-title ">Защита</p>
               <div class="zone-picker-wrapper">
                 <label for="" class="zone-picker-label">Голова</label>
-                <input type="checkbox" class="zone-picker-checkbox" name="" id="">
+                <input type="checkbox" class="zone-picker-checkbox defense-checkbox" name="" id="" data-zone="head">
               </div>
               <div class="zone-picker-wrapper">
                 <label for="" class="zone-picker-label">Шея</label>
-                <input type="checkbox" class="zone-picker-checkbox" name="" id="">
+                <input type="checkbox" class="zone-picker-checkbox defense-checkbox" name="" id="" data-zone="neck">
               </div>
               <div class="zone-picker-wrapper">
                 <label for="" class="zone-picker-label">Тело</label>
-                <input type="checkbox" class="zone-picker-checkbox" name="" id="">
+                <input type="checkbox" class="zone-picker-checkbox defense-checkbox" name="" id="" data-zone="body">
               </div>
               <div class="zone-picker-wrapper">
                 <label for="" class="zone-picker-label">Руки</label>
-                <input type="checkbox" class="zone-picker-checkbox" name="" id="">
+                <input type="checkbox" class="zone-picker-checkbox defense-checkbox" name="" id="" data-zone="hands">
               </div>
               <div class="zone-picker-wrapper">
                 <label for="" class="zone-picker-label">Ноги</label>
-                <input type="checkbox" class="zone-picker-checkbox" name="" id="">
+                <input type="checkbox" class="zone-picker-checkbox defense-checkbox" name="" id="" data-zone="legs">
               </div>
             </div>
           </div>
 
-          <button class="btn btn-attack">Атаковать</button>
+          <button class="btn attack-btn disabled-btn" disabled>Атаковать</button>
         </div>
 
         <div class="battle-enemy-wrapper">
           <p class="battle-enemy-name"></p>
           <div class="enemy-img-wrapper">
-            <img src="https://placeholder.pics/svg/300x350" alt="" class="enemy-img">
+            <img src="" alt="" class="enemy-img" id="enemyImg">
           </div>
           <div class="battle-enemy-hp-wrapper">
-            <progress class="enemy-hp-bar" value="120" max="120"></progress>
-            <p class="enemy-hp"><span class="enemy-current-hp">120</span>/<span class="enemy-max-hp">120</span></p>
+            <progress class="enemy-hp-bar" value="120" max="120" id="enemyHpBar"></progress>
+            <p class="enemy-hp" id="enemyHp"></p>
           </div>
         </div>
 
-        <div class="battle-log">Лог боя</div>
+        <div class="battle-log" id="battleLog">Лог боя</div>
       </div>
     </div>
   </main>
+
+  <script type="module" src="/js/config.js"></script>
+  <script type="module" src="/js/storage.js"></script>
+  <script type="module" src="/js/battle.js"></script>
 </body>
 </html>
