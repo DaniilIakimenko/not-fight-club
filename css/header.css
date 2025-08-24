@@ -31,3 +31,7 @@
 .nav-link-set {
   background-image: url("../assets/svg/settings.svg");
 }
+
+.nav-link-road {
+  background-image: url("../assets/svg/roadmap.svg");
+}
