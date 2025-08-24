@@ -73,6 +73,7 @@ const onEnemyDefeated = () => {
     renderEnemy(currentEnemy);
   } else {
     showVictoryMessage();
+    saveCurrentEnemy(currentEnemy);
   }
 }
 
@@ -154,19 +155,32 @@ const calculateDamage = (attackerZones, defenderZones, baseDamage) => {
 
 // Бой
 const initBattleRound = () => {
+  addToBattleLog('--- НОВЫЙ РАУНД ---', 'round');
+
   const playerAttack = getSelectedAttackZones();
   const playerDefense = getSelectedDefenseZones();
 
+  addToBattleLog(`Ты атакуешь: ${playerAttack.map(getZoneName).join(', ')}`);
+  addToBattleLog(`Ты защищаешь: ${playerDefense.map(getZoneName).join(', ')}`);
+
   const enemyTurn = generateEnemyTurn(currentEnemy);
+
+  addToBattleLog(`${currentEnemy.name} атакует: ${enemyTurn.attackZones.map(getZoneName).join(', ')}`);
+  addToBattleLog(`${currentEnemy.name} защищает: ${enemyTurn.defenseZones.map(getZoneName).join(', ')}`);
 
   const playerResult = calculateDamage(enemyTurn.attackZones, playerDefense, currentEnemy.damage);
   const enemyResult = calculateDamage(playerAttack, enemyTurn.defenseZones, hero.damage);
 
   hero = getHero();
 
+  generateLogMessage(playerResult, false).forEach(msg => addToBattleLog(msg, 'enemy'));
+  generateLogMessage(enemyResult, true).forEach(msg => addToBattleLog(msg, 'player'));
+
   updateHealth(playerResult, enemyResult);
 
-  /* generateLog(playerResult, enemyResult); */
+  addToBattleLog(`Твое здоровье: ${hero.currentHp}/${hero.maxHp}`);
+  addToBattleLog(`Здоровье ${currentEnemy.name}: ${currentEnemy.currentHp}/${currentEnemy.maxHp}`);
+
   console.log(playerResult, enemyResult);
 
   renderHero(hero);
@@ -220,4 +234,43 @@ const updateHealth = (playerData, enemyData) => {
   if (hero.currentHp < hero.maxHp || currentEnemy.currentHp < currentEnemy.maxHp) {
     localStorage.setItem('battleStarted', true);
   }
+}
+
+// Лог боя
+const generateLogMessage = (attackResult, isPlayerAttacking = true) => {
+  const attacker = isPlayerAttacking ? 'Ты' : currentEnemy.name;
+  const target = isPlayerAttacking ? currentEnemy.name : 'тебя';
+
+  return attackResult.result.map(({ zone, damage, blocked}) => {
+    const zoneName = getZoneName(zone);
+
+    if (blocked) {
+      return `${attacker} атаковал ${target} в ${zoneName}, но удар был заблокирован!`;
+    } else {
+      return `${attacker} атаковал ${target} в ${zoneName} и нанес ${damage} урона`;
+    }
+  })
+}
+
+const addToBattleLog = (message, type = 'info') => {
+  const logContainer = document.getElementById('battleLog');
+  const logEntry = document.createElement('div');
+
+  logEntry.textContent = message;
+  logEntry.className = `log-entry log-${type}`;
+
+  logContainer.appendChild(logEntry);
+  logContainer.scrollTop = logContainer.scrollHeight;
+}
+
+const getZoneName = (zone) => {
+  const zoneNames = {
+    head: 'голову',
+    neck: 'шею',
+    body: 'тело',
+    hands: 'руки',
+    legs: 'ноги'
+  };
+
+  return zoneNames[zone] || zone;
 }
