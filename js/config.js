@@ -1,7 +1,7 @@
 export const avatars = [
-  '../assets/img/human.webp',
-  '../assets/img/orc.webp',
-  '../assets/img/undead.webp',
+  'assets/img/human.webp',
+  'assets/img/orc.webp',
+  'assets/img/undead.webp',
 ];
 
 export const enemies = [
@@ -13,7 +13,7 @@ export const enemies = [
     damage: 15,
     attackZones: 2,
     defenseZones: 2,
-    avatar: '../assets/img/lich-king.jpg'
+    avatar: 'assets/img/lich-king.jpg'
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const enemies = [
     damage: 20,
     attackZones: 1,
     defenseZones: 3,
-    avatar: '../assets/img/ragnaros.webp'
+    avatar: 'assets/img/ragnaros.webp'
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ export const enemies = [
     damage: 10,
     attackZones: 3,
     defenseZones: 1,
-    avatar: '../assets/img/illidan.jpg'
+    avatar: 'assets/img/illidan.jpg'
   }
 ]
 
