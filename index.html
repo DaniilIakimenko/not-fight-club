@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Не Бойцовский Клуб</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/basic.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-wrapper">
+        <h1 class="title header-title">Домашняя страница</h1>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="nav-link nav-link-home"></a></li>
+            <li class="nav-item"><a href="character.html" class="nav-link nav-link-char"></a></li>
+            <li class="nav-item"><a href="settings.html" class="nav-link nav-link-set"></a></li>
+            <li class="nav-item"><a href="roadmap.html" class="nav-link nav-link-road"></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="container home-container">
+      <button class="btn btn-fight" onclick="window.location.href = 'battle.html';">Начать битву</button>
+    </div>
+  </main>
+
+  <script type="module" src="js/storage.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

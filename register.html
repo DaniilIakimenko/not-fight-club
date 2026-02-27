@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Не Бойцовский Клуб | Создайте персонажа</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/basic.css">
+  <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+  <main class="main">
+    <div class="container">
+      <div class="register-wrapper">
+        <h1 class="title register-title">Введите имя персонажа</h1>
+        <input 
+          type="text" 
+          class="character-name-input-reg"
+          id="characterName"
+          data-name
+          minlength="1" 
+          maxlength="16" 
+          required 
+          placeholder="имя персонажа"
+        >
+        <div class="character-type-wrapper">
+          <!-- <div class="character-type-avatar">
+            <img src="https://placeholder.pics/svg/300x350" alt="" class="character-img">
+          </div>
+          <div class="character-type-stats-wrapper">
+            <p class="character-type">Раса: <span></span></p>
+            <p class="character-type-hp">Количество жизней: </p>
+            <p class="character-type-dmg">Урон: <span></span></p>
+          </div> -->
+        </div>
+        <button class="btn register-btn" id="registerBtn">Создать</button>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/storage.js"></script>
+  <script type="module" src="js/register.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+.roadmap-container {
+}
+
+.roadmap-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.roadmap-feat {
+}
+.roadmap-title {
+}
+.roadmap-feat-title {
+}
+.roadmap-bugs {
+}
+.roadmap-bugs-title {
+}

@@ -1,0 +1,50 @@
+html,
+body {
+  scrollbar-gutter: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: #282828;
+  background-color: #f5f5f5;
+}
+
+.header {
+  flex-shrink: 0;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #282828;
+}
+
+.main {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.btn {
+  width: 100px;
+}
+
+.character-img,
+.enemy-img {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

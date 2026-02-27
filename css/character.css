@@ -1,0 +1,60 @@
+.character-container {
+  padding: 20px;
+}
+
+.character-wrapper {
+  display: flex;
+  column-gap: 25px;
+}
+
+.character-slider-wrapper {
+  position: relative;
+  width: 300px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.character-slider {
+  display: flex;
+  height: 350px;
+  margin-bottom: 15px;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 5px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.btn-avatar {
+  
+}
+
+.character-stat-wrapper {
+}
+.character-name {
+}
+.character-hp {
+}
+.character-dmg {
+}
+.character-wl-wrapper {
+}
+.wins {
+}
